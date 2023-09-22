@@ -28,4 +28,12 @@ def two_point_crossover(population: np.ndarray, parents: np.ndarray):
         childrens[idx*2+1, 2*crossover_point:] = population[couple[1], 2*crossover_point:]
 
     return childrens
+
+
+def partially_mapped_crossover(popoulation: np.ndarray, parents: np.ndarray):
+    pass
+
+
+def cycle_crossover(popoulation: np.ndarray, parents: np.ndarray):
+    pass
     

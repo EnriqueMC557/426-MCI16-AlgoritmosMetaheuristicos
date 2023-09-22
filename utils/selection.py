@@ -20,3 +20,7 @@ def monogamous_random_selection(population: np.ndarray):
 
 def roulette_selection(population: np.ndarray):
     pass
+
+
+def tournament_selection(population: np.ndarray):
+    pass
