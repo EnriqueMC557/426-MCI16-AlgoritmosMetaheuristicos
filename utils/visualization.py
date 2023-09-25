@@ -16,7 +16,7 @@ def plot_aptitude(avg_aptitude: np.ndarray, max_aptitude: np.ndarray, max_genera
     plt.figure(figsize=(10, 5))
     plt.title(title)
     plt.plot(avg_aptitude, "o-",label="Average aptitude")
-    plt.plot(max_aptitude, "o-", label="Max aptitude")
+    plt.plot(max_aptitude, "o-", label="Best aptitude")
     plt.xlabel("Generation")
     plt.ylabel("Aptitude")
     plt.xticks(range(max_generations))
