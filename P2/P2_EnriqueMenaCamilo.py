@@ -11,6 +11,7 @@ from utils.aptitude import evaluate_tsp_population
 from utils.selection import roulette_selection, tournament_selection
 from utils.crossover import partially_mapped_crossover, cycle_crossover
 from utils.mutation import insert_mutation, inverse_mutation
+from utils.elitist import genetic_competence
 from utils.visualization import plot_aptitude
 
 
@@ -33,13 +34,12 @@ for _ in tqdm(generations, desc="Generation"):
 
     parents = roulette_selection(aptitudes)
     childrens = partially_mapped_crossover(population, parents)
-    breakpoint()
-    # childrens = insert_mutation(childrens)
-    # population = genetic_competence(population, childrens)
+    childrens = insert_mutation(childrens)
+    population = genetic_competence(population, childrens)
 
 
 # Roulette + Cx
-population = init_nobinary_population(n=100, genes=18)
+population = init_nobinary_population(n=250, genes=18)
 avg_aptitudes_ = []
 min_aptitudes_ = []
 evolution_ = []
@@ -52,12 +52,12 @@ for _ in tqdm(generations, desc="Generation"):
 
     parents = roulette_selection(aptitudes)
     childrens = cycle_crossover(population, parents)
-    # childrens = inverse_mutation(childrens)
-    # population = genetic_competence(population, childrens)
+    childrens = inverse_mutation(childrens)
+    population = genetic_competence(population, childrens)
 
 
 # Tournament + PMx
-population = init_nobinary_population(n=100, genes=18)
+population = init_nobinary_population(n=500, genes=18)
 avg_aptitudes_ = []
 min_aptitudes_ = []
 evolution_ = []
@@ -70,12 +70,12 @@ for _ in tqdm(generations, desc="Generation"):
 
     parents = tournament_selection(population)
     childrens = partially_mapped_crossover(population, parents)
-    # childrens = insert_mutation(childrens)
-    # population = genetic_competence(population, childrens)
+    childrens = insert_mutation(childrens)
+    population = genetic_competence(population, childrens)
 
 
 # Tournament + Cx
-population = init_nobinary_population(n=100, genes=18)
+population = init_nobinary_population(n=1000, genes=18)
 avg_aptitudes_ = []
 min_aptitudes_ = []
 evolution_ = []
@@ -88,5 +88,5 @@ for _ in tqdm(generations, desc="Generation"):
 
     parents = tournament_selection(population)
     childrens = cycle_crossover(population, parents)
-    # childrens = inverse_mutation(childrens)
-    # population = genetic_competence(population, childrens)
+    childrens = inverse_mutation(childrens)
+    population = genetic_competence(population, childrens)
