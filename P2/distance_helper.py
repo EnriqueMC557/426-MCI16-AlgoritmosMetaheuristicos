@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+"""Distance helper."""
+
 import requests
 import pandas as pd
 from geopy.distance import geodesic

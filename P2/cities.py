@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+"""cities."""
+
 cities_list = [
     "Mexico City",
     "Quito",
