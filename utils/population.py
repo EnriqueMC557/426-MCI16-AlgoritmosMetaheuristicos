@@ -1,9 +1,12 @@
 #! /usr/bin/env python3
 """Population utilities."""
+import sys
+sys.path.append("..")
+
 
 import numpy as np
 
-from utils.casting import int_to_bin_array
+from utils.casting import int_to_bin_array, int_to_oct_array, int_to_hex_array
 
 
 def init_binary_population(n: int = 10, genes: int = 10):
@@ -11,8 +14,28 @@ def init_binary_population(n: int = 10, genes: int = 10):
     max = 2**genes
     population = np.random.randint(min, max, n)
     population = [int_to_bin_array(individue, genes) for individue in population]
-    population = np.array(population, dtype=int)
+    population = np.array(population)
     
+    return population
+
+
+def init_octal_population(n: int = 10, genes: int = 10):
+    min_octal = 0o0
+    max_octal = 0o7 * (8**genes) 
+    population = np.random.randint(min_octal, max_octal, n, dtype=np.uint64)
+    population = [int_to_oct_array(individue, genes) for individue in population]
+    population = np.array(population)
+
+    return population
+
+
+def init_hexadecimal_population(n: int = 10, genes: int = 10):
+    min_hex = 0x0
+    max_hex = 0xF * (16**genes)
+    population = np.random.randint(min_hex, max_hex, n, dtype=np.uint64)
+    population = [int_to_hex_array(individue, genes) for individue in population]
+    population = np.array(population)
+
     return population
 
 
