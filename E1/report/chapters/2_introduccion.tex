@@ -1,0 +1,14 @@
+La \textit{función de Rosenbrock}, también conocida como la \textit{función de Rosenbrock's valley}, es una función matemática utilizada comúnmente como un problema de prueba en optimización y algoritmos de búsqueda. Esta función es conocida por ser un desafío para muchos algoritmos de optimización debido a su forma de valle estrecho y plana. La función de Rosenbrock está definida de la siguiente manera en dos dimensiones:
+
+$$f(x_1, x_2) = b * (x_2 - x_1^2)^2\ + (x_1 - a)^2$$
+
+Donde $a$ y $b$ son constantes (generalmente $a = 1$ y $b = 100$ para el caso más común), mientras $x_1$ y $x_2$ son las variables de la función que se optimizan. El mínimo global de esta función se encuentra en $f(x_1, x_2) = 0$, en el punto $(x_1, x_2) = (a, a^2)$, que para el caso más común sería $(x_1, x_2) = (1, 1)$.
+
+Los algoritmos genéticos son útiles para abordar problemas de optimización, como la función de Rosenbrock, por varias razones:
+
+\begin{enumerate}
+	\item Exploración del espacio de búsqueda: Los algoritmos genéticos utilizan una población de soluciones candidatas que evoluciona con el tiempo. Esto permite explorar diferentes regiones del espacio de búsqueda en paralelo, lo que es beneficioso en funciones como la de Rosenbrock, que tienen valles estrechos y planos.
+	\item Diversificación: La selección y la operación de cruza en algoritmos genéticos fomentan la diversificación de soluciones en la población. Esto es importante en la función de Rosenbrock, ya que puede ayudar a evitar la convergencia prematura hacia soluciones locales subóptimas.
+	\item Adaptación gradual: Con el tiempo, los individuos de la población tienden a converger hacia soluciones más óptimas a medida que se transmiten los genes de los individuos más aptos. En el caso de la función de Rosenbrock, este proceso gradual puede permitir que la población se acerque al mínimo global.
+	\item Flexibilidad: Los algoritmos genéticos son flexibles y pueden adaptarse a diferentes problemas de optimización
+\end{enumerate}
